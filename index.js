@@ -27,12 +27,14 @@ const client = new TelegramClient(
 );
 
 function getTime() {
-  return new Intl.DateTimeFormat("en-US", {
+  const parts = new Intl.DateTimeFormat("en-US", {
     timeZone: TIMEZONE,
     hour: "2-digit",
     minute: "2-digit",
     hour12: true,
-  }).format(new Date());
+  }).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]));
+  return `${Number(values.hour)}:${values.minute}${values.dayPeriod.toLowerCase()}`;
 }
 
 function getDateInTimezone() {

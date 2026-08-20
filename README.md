@@ -106,7 +106,7 @@ npm start
 ```
 
 The profile name should update every minute.
-The time uses 12-hour format, for example `10:20 AM` or `2:10 PM`. On December 31 and January 1 it adds `🎄✨`, on February 14 it adds the birthday decoration `🎂🎉🎁`, and on June 1 `🎈☀️`. During the configured Ramadan date range it adds `🌙✨`. Ramadan dates change every year, so update `RAMADAN_START` and `RAMADAN_END` annually.
+The time uses explicit 12-hour format, for example `10:20am` or `2:10pm`. On December 31 and January 1 it adds `🎄✨`, on February 14 it adds the birthday decoration `🎂🎉`, and on June 1 `🎈☀️`. During the configured Ramadan date range it adds `🌙✨`. Ramadan dates change every year, so update `RAMADAN_START` and `RAMADAN_END` annually.
 
 ## 4. Deploy to Render
 
