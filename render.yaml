@@ -1,0 +1,24 @@
+services:
+  - type: worker
+    name: telegram-time-updater
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: SESSION
+        sync: false
+      - key: BASE_NAME
+        value: Asad
+      - key: TIMEZONE
+        value: Asia/Tashkent
+      - key: UPDATE_BIO
+        value: "false"
+      - key: RAMADAN_START
+        value: 2026-02-18
+      - key: RAMADAN_END
+        value: 2026-03-19

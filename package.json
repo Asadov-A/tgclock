@@ -1,0 +1,19 @@
+{
+  "name": "telegram-time-render",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Updates a Telegram profile name with Tashkent time every minute using GramJS.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "session": "node setup-session.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "input": "^1.0.1",
+    "telegram": "^2.26.22"
+  }
+}
