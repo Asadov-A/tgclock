@@ -27,11 +27,11 @@ const client = new TelegramClient(
 );
 
 function getTime() {
-  return new Intl.DateTimeFormat("en-GB", {
+  return new Intl.DateTimeFormat("en-US", {
     timeZone: TIMEZONE,
     hour: "2-digit",
     minute: "2-digit",
-    hour12: false,
+    hour12: true,
   }).format(new Date());
 }
 
@@ -51,7 +51,7 @@ function getHolidayDecoration() {
   const monthDay = date.slice(5);
 
   if (monthDay === "12-31" || monthDay === "01-01") return " 🎄✨";
-  if (monthDay === "02-14") return " ❤️🌹";
+  if (monthDay === "02-14") return " 🎂🎉";
   if (monthDay === "06-01") return " 🎈☀️";
   if (RAMADAN_START && RAMADAN_END && date >= RAMADAN_START && date <= RAMADAN_END) {
     return " 🌙✨";
