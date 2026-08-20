@@ -147,7 +147,19 @@ Render Background Workers are intended for continuously running processes, so th
 
 For a genuinely free always-on option, use an Oracle Cloud Always Free VM or run the worker on a home computer/Raspberry Pi. A free web service that sleeps is unsuitable because the process must stay connected and update the name every minute. GitHub Actions is also not a good fit for this loop because scheduled jobs are not precise enough and may stop between runs.
 
-## 5. Security
+## 5. Deploy to Hostless
+
+`render.yaml` is a Render-specific Blueprint and Hostless will not normally read it. In Hostless, create a Node.js worker or Docker service manually:
+
+```text
+Build command: npm ci --omit=dev
+Start command: npm start
+Node version: 20
+```
+
+The repository now includes a `Dockerfile` for Hostless deployments that support Docker. Add the environment variables in the Hostless dashboard as protected values. Do not upload `.env`.
+
+## 6. Security
 
 Do NOT commit:
 
